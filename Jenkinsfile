@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Cody - Push image to Dockerhub') {
             steps {
-                docker tag my_nginx:latest codymorris92/my_nginx:latest
+                docker tag my_nginx{latest codymorris92/my_nginx}latest
                 docker image push codymorris92/my_nginx
             }
         }
