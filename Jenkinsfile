@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Cody - Build Docker Image') {
             steps {
-                docker build -t simple_nginx .
+                script{         
+                sh 'docker build -t simple_nginx .'
+                }
         stage('Cody- Login to Dockerhub') {
             steps {
                 echo "working2"
