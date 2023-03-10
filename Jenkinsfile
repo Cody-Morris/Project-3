@@ -8,12 +8,13 @@ pipeline {
                 }
         stage('Cody- Login to Dockerhub') {
             steps {
-                echo "working2"
+                cat ~/my_password.txt | docker login --username codymorris92 --password-GLdkS7bTK@SjUhj
             }
         }
         stage('Cody - Push image to Dockerhub') {
             steps {
-                echo "working3"
+                docker tag my_nginx:latest codymorris92/my_nginx:latest
+                docker image push codymorris92/my_nginx
             }
         }
     }
